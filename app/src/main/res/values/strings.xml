@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">PingPong_fragments</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="title_home">Stats</string>
+    <string name="title_dashboard">Leaderboard</string>
+    <string name="title_notifications">Settings</string>
+    <string name="btn_signin">Sign In</string>
+</resources>

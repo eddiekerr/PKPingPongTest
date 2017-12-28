@@ -1,0 +1,55 @@
+{
+  "project_info": {
+    "project_number": "993573838140",
+    "firebase_url": "https://pktabletennis.firebaseio.com",
+    "project_id": "pktabletennis",
+    "storage_bucket": "pktabletennis.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:993573838140:android:e032977556cbeb34",
+        "android_client_info": {
+          "package_name": "com.thecakejuice.pingpong_fragments"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "993573838140-nvn9e4rt6o9sm5cajbv52n8i7tkvhmj2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.thecakejuice.pingpong_fragments",
+            "certificate_hash": "bcb4f9558ea80c474b87f490445fdd6820a0d334"
+          }
+        },
+        {
+          "client_id": "993573838140-q2nuoac25hgro1broarhs8sca8dbc7he.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA9bmXQyOhzsO96Gj6_we_6vYUJBxO0Ix0"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "993573838140-q2nuoac25hgro1broarhs8sca8dbc7he.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
