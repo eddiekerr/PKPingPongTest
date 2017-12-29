@@ -1,28 +1,18 @@
 package com.thecakejuice.pingpong_fragments;
 
-import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.MenuItem;
-import android.view.View;
-import android.widget.Button;
-
-import com.thecakejuice.pingpong_fragments.Fragments.SettingsFragment;
-
-import static android.content.ContentValues.TAG;
-
 
 public class MainActivity extends AppCompatActivity {
 
     private ViewPager mViewPager;
     private PagerAdapter mPagerAdapter;
     private BottomNavigationView mBottomNavView;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
