@@ -1,6 +1,5 @@
 package com.thecakejuice.pingpong_fragments;
 
-import android.app.Application;
 import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
@@ -37,6 +36,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
         setContentView(R.layout.activity_sign_in);
 
         findViewById(R.id.sign_in_button).setOnClickListener(this);
+        findViewById(R.id.tv_sign_in2).setVisibility(View.GONE);
 
         // Configure sign-in to request the user's ID, email address, and basic
         // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
@@ -65,7 +65,8 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
     private void updateUI(FirebaseUser account) {
         if(account != null){
             findViewById(R.id.sign_in_button).setVisibility(View.GONE);
-            IsUserSignedIn.setUserSignedIn = true;
+            findViewById(R.id.tv_sign_in1).setVisibility(View.GONE);
+            findViewById(R.id.tv_sign_in2).setVisibility(View.VISIBLE);
         }
     }
 
