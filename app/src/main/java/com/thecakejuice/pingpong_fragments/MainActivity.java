@@ -10,6 +10,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 
 import com.thecakejuice.pingpong_fragments.Fragments.SettingsFragment;
 
@@ -21,6 +22,7 @@ public class MainActivity extends AppCompatActivity {
     private ViewPager mViewPager;
     private PagerAdapter mPagerAdapter;
     private BottomNavigationView mBottomNavView;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

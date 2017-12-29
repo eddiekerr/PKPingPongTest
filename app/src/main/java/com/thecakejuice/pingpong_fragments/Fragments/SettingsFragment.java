@@ -35,9 +35,8 @@ public class SettingsFragment extends Fragment implements OnClickListener{
 
     }
 
-    public void onViewCreated(Button button) {
+    public void onViewCreated(View view, Bundle bundle) {
 
-        //onViewCreated(mButton = getView().findViewById(R.id.button2));
         mButton = getView().findViewById(R.id.button2);
         mButton.setOnClickListener(this);
 
