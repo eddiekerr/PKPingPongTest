@@ -11,6 +11,7 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 
+import com.google.firebase.auth.FirebaseAuth;
 import com.thecakejuice.pingpong_fragments.R;
 import com.thecakejuice.pingpong_fragments.SignInActivity;
 
@@ -47,6 +48,7 @@ public class SettingsFragment extends Fragment implements OnClickListener{
         Log.d(TAG, "BUTTON HAS BEEN CLICKED FROM 2ND ONCLICK LISTENER");
         switch(view.getId()) {
             case R.id.button2: {
+                FirebaseAuth.getInstance().signOut();
                 Intent intent = new Intent(SettingsFragment.this.getActivity(), SignInActivity.class);
                 startActivity(intent);
             }

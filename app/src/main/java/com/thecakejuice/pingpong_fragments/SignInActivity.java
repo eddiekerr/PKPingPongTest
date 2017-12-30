@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
-import android.widget.Button;
+import android.widget.ProgressBar;
 
 import com.google.android.gms.auth.api.signin.GoogleSignIn;
 import com.google.android.gms.auth.api.signin.GoogleSignInAccount;
@@ -29,6 +29,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
     private static final String TAG = "SignInActivity";
 
     private FirebaseAuth mAuth;
+    ProgressBar spinner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,6 +38,8 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
 
         findViewById(R.id.sign_in_button).setOnClickListener(this);
         findViewById(R.id.tv_sign_in2).setVisibility(View.GONE);
+        spinner = findViewById(R.id.progressBar1);
+        spinner.setVisibility(View.GONE);
 
         // Configure sign-in to request the user's ID, email address, and basic
         // profile. ID and basic profile are included in DEFAULT_SIGN_IN.
@@ -65,8 +68,17 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
     private void updateUI(FirebaseUser account) {
         if(account != null){
             findViewById(R.id.sign_in_button).setVisibility(View.GONE);
+            spinner.setVisibility(View.GONE);
             findViewById(R.id.tv_sign_in1).setVisibility(View.GONE);
             findViewById(R.id.tv_sign_in2).setVisibility(View.VISIBLE);
+            Intent intent = new Intent(this, MainActivity.class);
+            startActivity(intent);
+        }
+        if(account == null){
+            findViewById(R.id.sign_in_button).setVisibility(View.VISIBLE);
+            spinner.setVisibility(View.GONE);
+            findViewById(R.id.tv_sign_in1).setVisibility(View.VISIBLE);
+            findViewById(R.id.tv_sign_in2).setVisibility(View.GONE);
         }
     }
 
@@ -75,6 +87,11 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
         startActivityForResult(signInIntent, RC_SIGN_IN);
     }
 
+//    private void signOut() {
+//        FirebaseAuth.getInstance().signOut();
+//        updateUI(null);
+//    }
+
     public void onClick(View v) {
         switch (v.getId()) {
             case R.id.sign_in_button:
@@ -82,6 +99,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
                 break;
         }
     }
+
 
     @Override
     public void onActivityResult(int requestCode, int resultCode, Intent data) {
@@ -92,6 +110,7 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
             // The Task returned from this call is always completed, no need to attach
             // a listener.
             Task<GoogleSignInAccount> task = GoogleSignIn.getSignedInAccountFromIntent(data);
+            spinner.setVisibility(View.VISIBLE);
             handleSignInResult(task);
         }
     }
