@@ -1,6 +1,7 @@
 package com.thecakejuice.pingpong_fragments;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
@@ -21,6 +22,7 @@ import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.auth.GoogleAuthProvider;
+import com.google.firebase.auth.UserInfo;
 
 public class SignInActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -140,6 +142,21 @@ public class SignInActivity extends AppCompatActivity implements View.OnClickLis
                             // Sign in success, update UI with the signed-in user's information
                             Log.d(TAG, "signInWithCredential:success");
                             FirebaseUser user = mAuth.getCurrentUser();
+//                            //FirebaseUser user = FirebaseAuth.getInstance().getCurrentUser();
+//                            for (UserInfo profile : user.getProviderData()) {
+//                                // Id of the provider (ex: google.com)
+//                                String providerId = profile.getProviderId();
+//
+//                                // UID specific to the provider
+//                                String uid = profile.getUid();
+//
+//                                // Name, email address, and profile photo Url
+//                                String name = profile.getDisplayName();
+//                                String email = profile.getEmail();
+//                                Uri photoUrl = profile.getPhotoUrl();
+//
+//                                FirebaseUserInfo firebaseUserInfo = new FirebaseUserInfo(name, email, uid);
+//                            }
                             updateUI(user);
                         } else {
                             // If sign in fails, display a message to the user.

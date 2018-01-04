@@ -1,5 +1,6 @@
 package com.thecakejuice.pingpong_fragments;
 
+import android.net.Uri;
 import android.support.annotation.NonNull;
 import android.support.design.widget.BottomNavigationView;
 import android.support.v4.view.PagerAdapter;
@@ -8,11 +9,18 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.MenuItem;
 
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserInfo;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class MainActivity extends AppCompatActivity {
 
     private ViewPager mViewPager;
     private PagerAdapter mPagerAdapter;
     private BottomNavigationView mBottomNavView;
+    public static DatabaseReference mDatabase;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -22,6 +30,8 @@ public class MainActivity extends AppCompatActivity {
         mViewPager = (ViewPager) findViewById(R.id.viewpager);
         mBottomNavView = (BottomNavigationView) findViewById(R.id.navigation);
         mBottomNavView.setOnNavigationItemSelectedListener(mOnNavigationItemSelectedListener);
+
+        mDatabase = FirebaseDatabase.getInstance().getReference();
 
         mPagerAdapter = new FragmentAdapter(getSupportFragmentManager(), this);
         mViewPager.setAdapter(mPagerAdapter);
@@ -73,4 +83,10 @@ public class MainActivity extends AppCompatActivity {
             return false;
         }
     };
+
+    public static void writeNewUser(String userId, String name, String email) {
+        mDatabase.child("users").child(userId).child("Name").setValue(name);
+        mDatabase.child("users").child(userId).child("Email").setValue(email);
+
+    }
 }

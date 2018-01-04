@@ -5,4 +5,8 @@
     <string name="title_dashboard">Leaderboard</string>
     <string name="title_notifications">Settings</string>
     <string name="btn_signin">Sign Out</string>
+    <string name="textview_userinfo">This is where user info goes</string>
+    <string name="textview_email">This is the users email</string>
+    <string name="textview_uid">This is the users ID</string>
+    <string name="btn_write_user">Write user to db</string>
 </resources>
