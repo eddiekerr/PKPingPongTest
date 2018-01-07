@@ -47,9 +47,10 @@ public class StatsFragment extends Fragment implements View.OnClickListener{
             // Id of the provider (ex: google.com)
             String providerId = profile.getProviderId();
 
-            if(providerId == "firebase") {
-                // UID specific to the provider
-                String uid = profile.getUid();
+            // UID specific to the provider
+            String uid = profile.getUid();
+
+            if(providerId.equals("firebase")) {
 
                 // Name, email address, and profile photo Url
                 String name = profile.getDisplayName();
